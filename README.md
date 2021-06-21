@@ -1,2 +1,2 @@
-# drop-pwa.v2 PWA APP
+# Luxe Global APP
 
