@@ -1,2 +1,2 @@
-# Luxe Global APP
+# Lx Global APP
 
