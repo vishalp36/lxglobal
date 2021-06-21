@@ -1,0 +1,222 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.store-card {
+    background-color: $white;
+    border: 1px solid $gray10;
+    border-radius: rem(12px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.store-card-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.store-top {
+    position: relative;
+}
+
+.store-img {
+    position: relative;
+    padding-bottom: 51.75%;
+    border-radius: rem(12px);
+    img {
+        @include img-aspect-ratio;
+        border-radius: rem(12px);
+        object-fit: cover;
+    }
+}
+
+.store-tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: rem(6px) rem(6px) 0 0;
+    display: inline-flex;
+}
+
+.store-info {
+    padding: 1.25rem 1rem 0.5rem 1rem;
+}
+
+.store-inst {
+    padding: 0 1rem 1.25rem 1rem;
+    display: flex;
+}
+
+.bottom-section {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.title,
+.tag-section {
+    @include text-truncate;
+}
+
+.tag-section,
+.bottom-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 rem(-13px);
+    align-items: center;
+}
+
+.inline {
+    font-size: rem(16px);
+    line-height: rem(20px);
+    color: $gray;
+    position: relative;
+    padding: 0 rem(13px);
+    &:before {
+        content: "";
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: $gray;
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -1.5px;
+    }
+    &:first-child {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.light-dot {
+    color: $gray70;
+    &::before {
+        background-color: $gray70;
+    }
+}
+
+.sm-icon-20 {
+    width: rem(20px);
+    height: rem(20px);
+    margin-right: rem(4px);
+}
+
+.sm-icon-20,
+.light-text {
+    vertical-align: middle;
+}
+
+.light-text {
+    color: $gray70;
+    display: inline-block;
+}
+
+.product-sm-slider {
+    padding: 0 1rem 1rem 1rem;
+    margin: 0 -1rem;
+    &:before {
+        content: "";
+        width: calc(100% - 2rem);
+        height: 1px;
+        background-color: $gray20;
+        display: block;
+        margin: 0 auto 1rem auto;
+    }
+}
+
+.product-xs-slider {
+    padding: 0;
+    margin: 0 -1.5rem;
+}
+
+.h-auto {
+    height: auto;
+}
+
+.white-card {
+    padding: rem(32px);
+    .store-info,
+    .store-inst,
+    .bottom-section {
+        padding: 0;
+    }
+    .bottom-section {
+        padding: .65rem 0 1rem 0;
+    }
+}
+
+.store-no-border {
+    border: 0;
+    .store-info {
+        padding: rem(8px) 0;
+    }
+    .title {
+        font-weight: 600;
+        font-size: rem(15px);
+        line-height: rem(20px);
+        @include multi-line-ellipsis-2;
+        white-space: normal;
+        text-overflow: inherit;
+    }
+    .inline {
+        font-size: rem(14px);
+        line-height: rem(16px);
+        padding: 0 rem(8px);
+    }
+    .tag-section {
+        margin: 0 rem(-8px);
+    }
+}
+
+.qty-val {
+    border: 1px solid $primary;
+    border-radius: rem(12px);
+    background-color: $primary20;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-weight: 600;
+    font-size: rem(14px);
+    line-height: rem(16px);
+    z-index: 1;
+    min-width: rem(40px);
+    margin-left: rem(-20px);
+    padding: rem(1px) 0;
+}
+
+@media(max-width: $xl-device - 1) {
+    .white-card {
+        padding: rem(20px);
+    }
+}
+
+@media (max-width: $lg-device - 1) {
+    .inline {
+        font-size: rem(15px);
+    }
+    .store-info {
+        padding: rem(12px);
+    }
+    .store-inst {
+        padding: 0 rem(12px) 0rem(12px) rem(12px);
+    }
+    .bottom-section {
+        padding: 0 rem(12px) rem(12px) rem(12px);
+    }
+    .title {
+        margin-bottom: 0;
+    }
+}
+
+@media(max-width: $sm-device) {
+    .white-card {
+        padding: rem(12px);
+    }
+}

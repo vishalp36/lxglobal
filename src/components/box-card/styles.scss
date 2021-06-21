@@ -1,0 +1,59 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+
+.box-card {
+  background-color: $gray5;
+  //   border: 1px solid $gray10;
+  border-radius: rem(12px);
+  height: 100%;
+  overflow: hidden;
+}
+
+.box-img {
+  position: relative;
+  padding-bottom: 57%;
+  // border-radius: rem(12px);
+
+  img {
+    @include img-aspect-ratio;
+
+    object-fit: cover;
+  }
+}
+
+.box-content-wrap {
+  padding: rem(20px) rem(20px) rem(28px);
+}
+
+.box-title {
+  margin-bottom: 0;
+  font-size: rem(18px);
+  line-height: rem(24px);
+  text-align: center;
+}
+
+.box-content {
+  font-size: rem(16px);
+  line-height: rem(24px);
+  color: $gray;
+  text-align: center;
+}
+
+@media (min-width: $md-device) {
+  .box-content-wrap {
+    padding: rem(24px) rem(16px) rem(28px);
+  }
+}
+
+@media (min-width: $lg-device) {
+}
+
+@media (min-width: $xl-device) {
+  .box-title {
+    font-size: rem(20px);
+    line-height: rem(32px);
+  }
+  .box-content-wrap {
+    padding: rem(36px) rem(20px) rem(36px);
+  }
+}

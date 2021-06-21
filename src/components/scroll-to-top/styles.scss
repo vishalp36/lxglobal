@@ -1,0 +1,53 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+
+.scroll-top-btn {
+  width: rem(56px);
+  height: rem(56px);
+  display: block;
+  background: rgba($white, 0.9) !important;
+  border: 1px solid $gray10;
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  padding: rem(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: rem(16px);
+  bottom: rem(80px); //76px
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.svg-top-arrow {
+  width: rem(20px);
+  color: $primary;
+}
+
+@media (min-width: $sm-device) {
+  .scroll-top-btn {
+    width: rem(64px);
+    height: rem(64px);
+    right: rem(16px);
+    bottom: rem(92px); //91px
+  }
+}
+
+@media (min-width: $lg-device) {
+  .scroll-top-btn {
+    right: rem(16px);
+    bottom: rem(92px); //91px
+  }
+}
+
+@media (min-width: $xl-device) {
+  .scroll-top-btn {
+    right: rem(40px);
+    bottom: rem(40px); //40px
+  }
+}

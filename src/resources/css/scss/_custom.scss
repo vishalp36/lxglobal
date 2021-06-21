@@ -1,0 +1,83 @@
+.text-primary {
+    color: $primary !important;
+}
+
+.text-truncate {
+    @include text-truncate;
+}
+
+.text-gray70 {
+    color: $gray70 !important;
+}
+
+.error-text {
+    font-size: rem(13px);
+    line-height: rem(14px);
+    color: $danger;
+}
+
+.text-gray {
+    color: $gray !important;
+}
+
+input::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+}
+
+.bg-primary {
+    background-color: $primary;
+}
+
+.bg-secondary {
+    background-color: $secondary-color;
+}
+
+.bg-danger {
+    background-color: $danger;
+}
+
+.bg-dark {
+    background-color: $black;
+}
+
+.bg-gray {
+    background-color: $gray;
+}
+
+.bg-gray70 {
+    background-color: $gray70;
+}
+
+.bg-gray50 {
+    background-color: $gray50;
+}
+
+.bg-gray20 {
+    background-color: $gray20;
+}
+
+.bg-gray10 {
+    background-color: $gray10;
+}
+
+.text-danger {
+    color: $danger !important;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.display-only-desktop {
+    display: none;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+@media(min-width: $xl-device) {
+    .display-only-desktop {
+        display: block;
+    }
+}

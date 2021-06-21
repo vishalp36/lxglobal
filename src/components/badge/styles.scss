@@ -1,0 +1,85 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.badge {
+    font-size: rem(11px);
+    line-height: rem(11px);
+    letter-spacing: rem(.4px);
+    border-radius: rem(6px);
+    background-color: $badge-default;
+    font-weight: 700;
+    color: $white;
+    text-transform: uppercase;
+    padding: rem(4.5px) rem(8px);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.badge-yellow {
+    background-color: $badge-yellow;
+}
+
+.badge-pink {
+    background-color: $badge-pink;
+}
+
+.badge-success {
+    background-color: $badge-success;
+}
+
+.badge-danger {
+    background-color: $badge-danger;
+}
+
+.badge-gray {
+    background-color: $badge-gray;
+}
+
+.badge-lg {
+    padding: rem(8.5px) rem(12px);
+}
+
+.d-none {
+    display: none;
+}
+
+@media(max-width: $sm-device) {
+    .badge-icon {
+        width: rem(20px);
+        height: rem(20px);
+        border-radius: 50%;
+        position: relative;
+        padding: 0;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: rem(20px);
+            height: rem(20px);
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+        }
+    }
+    .badge-danger-icon,
+    .badge-gray-icon {
+        &:after {
+            background-color: $danger;
+            background-image: url('../../resources/svg-icons/close-white.svg');
+            background-size: rem(10px)
+        }
+    }
+    .badge-success-icon {
+        &:after {
+            background-color: $badge-success;
+            background-image: url('../../resources/svg-icons/check-white.svg');
+            background-size: rem(11px)
+        }
+    }
+    .badge-gray-icon {
+        &:after {
+            background-color: $gray50;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.page-item {
+    &:first-child {
+        padding-right: rem(4px);
+    }
+    &:last-child {
+        padding-left: rem(4px);
+    }
+    .previous-span-text,
+    .next-span-text {
+        display: none;
+    }
+    .page-link {
+        font-size: rem(16px);
+        line-height: rem(20px);
+        text-align: center;
+        color: $gray;
+        margin: 0 rem(6px);
+        min-width: rem(20px);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .svg-icon {
+        width: rem(12px);
+    }
+    &.disabled .page-link {
+        color: $gray50;
+        pointer-events: none;
+        cursor: auto;
+    }
+    &.active .page-link {
+        color: $primary;
+    }
+    .icon-wrap {
+        width: rem(20px);
+        height: rem(20px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: $md-device) {
+    .page-item {
+        &:first-child {
+            padding-right: rem(24px);
+        }
+        &:last-child {
+            padding-left: rem(24px);
+        }
+        .page-link {
+            margin: 0 rem(10px);
+        }
+        .previous-span-text,
+        .next-span-text {
+            display: inline-block;
+        }
+        .svg-icon {
+            width: rem(10px);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 rem(24px);
+    position: relative;
+    width: 100%;
+}
+
+.no-smooth-scroll {
+    scroll-behavior: auto;
+}
+
+@media(min-width: $xl-device) {
+    .container {
+        max-width: $container-width;
+    }
+}
+
+@media(max-width:$sm-device) {
+    .container {
+        padding: 0 rem(20px);
+    }
+}

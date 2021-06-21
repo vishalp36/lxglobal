@@ -1,0 +1,101 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+$bottom-nav-height: rem(74px);
+$bottom-nav-sm-height: rem(64px);
+.min-h-box {
+    min-height: $bottom-nav-height;
+}
+
+.bottom-nav {
+    min-height: $bottom-nav-height;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: $white;
+    box-shadow: inset 0px 1px 0px $gray20;
+    display: flex;
+    align-items: center;
+    z-index: 99999;
+}
+
+.bottom-nav-div {
+    @include list-unstyled;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.svg-icon {
+    color: $gray20;
+    width: rem(24px);
+    transition: 0.2s all linear;
+}
+
+.bottom-nav-text {
+    font-size: rem(10px);
+    line-height: rem(12px);
+    font-weight: 600;
+    color: $gray70;
+    display: block;
+    padding: rem(2px) 0;
+    transition: 0.2s all linear;
+}
+
+.bottom-nav-link {
+    padding: .5rem;
+    position: relative;
+    a {
+        display: block;
+        text-align: center;
+    }
+    &:hover,
+    &.active {
+        .bottom-nav-text,
+        .svg-icon {
+            color: $primary;
+        }
+    }
+}
+
+.value {
+    width: rem(20px);
+    height: rem(20px);
+    border-radius: 50%;
+    border: 1.5px solid $white;
+    background-color: $primary;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: $white;
+    font-size: rem(9px);
+    font-weight: 700;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: .45rem;
+}
+
+// @media (min-width: $lg-device + 1) {
+@media (min-width: $xl-device) {
+    .bottom-nav {
+        display: none;
+    }
+}
+
+@media (max-width: $sm-device) {
+    .bottom-nav-div {
+        justify-content: space-between;
+        max-width: 100%;
+    }
+    .bottom-nav {
+        min-height: $bottom-nav-sm-height;
+    }
+    .min-h-box {
+        min-height: $bottom-nav-sm-height;
+    }
+}

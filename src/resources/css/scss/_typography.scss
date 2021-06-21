@@ -1,0 +1,166 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1 .h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: $font-family;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: $heading-color;
+}
+
+.h1,
+h1 {
+    font-size: $heading1-font-size;
+    line-height: $heading1-line-height;
+}
+
+.h2,
+h2 {
+    font-size: $heading2-font-size;
+    line-height: $heading2-line-height;
+}
+
+.h3,
+h3 {
+    font-size: $heading3-font-size;
+    line-height: $heading3-line-height;
+}
+
+.h4,
+h4 {
+    font-size: $heading4-font-size;
+    line-height: $heading4-line-height;
+}
+
+.h5,
+h5 {
+    font-size: $heading5-font-size;
+    line-height: $heading5-line-height;
+    font-weight: $heading5-font-weight;
+}
+
+p,
+.p {
+    font-family: $font-family;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+}
+
+.p2,
+.semibold {
+    font-weight: 600;
+}
+
+.sm-title {
+    font-size: rem(20px);
+    line-height: rem(20px);
+    font-weight: 700;
+}
+
+.text-14,
+.text-15,
+.text-15-semibold,
+.link-16,
+.link-18,
+.link-20 {
+    line-height: rem(20px);
+}
+
+.text-14,
+.link-14 {
+    font-size: rem(14px);
+}
+
+.text-15,
+.text-15-semibold {
+    font-size: rem(15px);
+}
+
+.text-15-semibold,
+.text-16-semibold {
+    font-weight: 600;
+}
+
+.link-14 {
+    line-height: rem(16px);
+}
+
+.link-14,
+.link-16,
+.link-18,
+.link-20 {
+    text-decoration: underline;
+    color: $gray-dark;
+    text-underline-position: from-font;
+    text-decoration-thickness: from-font;
+}
+
+.link-16,
+.text-16,
+.text-16-semibold {
+    font-size: rem(16px);
+}
+
+.text-16 {
+    line-height: rem(24px);
+}
+
+.link-18 {
+    font-size: rem(18px);
+}
+
+.link-20 {
+    font-size: rem(20px);
+}
+
+@media(max-width: $xl-device - 1) {
+    .h1,
+    h1 {
+        font-size: $heading1-font-size-md;
+        line-height: $heading1-line-height-md;
+    }
+    .h2,
+    h2 {
+        font-size: $heading2-font-size-md;
+        line-height: $heading2-line-height-md;
+    }
+    .h3,
+    h3 {
+        font-size: $heading3-font-size-md;
+        line-height: $heading3-line-height-md;
+    }
+    .h4,
+    h4 {
+        font-size: $heading4-font-size-sm;
+        line-height: $heading4-line-height-sm;
+    }
+}
+
+@media(max-width: $sm-device) {
+    .h1,
+    h1 {
+        font-size: $heading1-font-size-sm;
+        line-height: $heading1-line-height-sm;
+    }
+    .h2,
+    h2 {
+        font-size: $heading2-font-size-sm;
+        line-height: $heading2-line-height-sm;
+    }
+    .h3,
+    h3 {
+        font-size: $heading3-font-size-sm;
+        line-height: $heading3-line-height-sm;
+    }
+    .sm-title {
+        font-size: rem(18px);
+    }
+}

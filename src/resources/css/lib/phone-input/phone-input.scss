@@ -1,0 +1,74 @@
+@import "../../scss/variable";
+@import "../../scss/mixins";
+.custom-phone-input {
+    background-color: $white;
+    border: 1px solid $input-border-color;
+    border-radius: rem(8px);
+    height: rem(48px);
+    padding: 0.5rem 1rem;
+    position: relative;
+    input {
+        border: none;
+        height: rem(46px);
+        font-family: $font-family;
+        font-size: rem(16px);
+        line-height: rem(20px);
+        color: $gray-dark;
+        &:focus,
+        &:hover,
+        &:active {
+            outline: 0;
+        }
+        @include placeholder {
+            color: $gray70;
+        }
+    }
+    .PhoneInputCountryIcon--border {
+        box-shadow: none;
+    }
+    .PhoneInputCountryIconImg {
+        border-radius: 3px;
+    }
+    .PhoneInputCountryIcon--border,
+    .PhoneInputCountryIconImg {
+        &:focus {
+            outline: 0;
+        }
+    }
+    .PhoneInputCountrySelectArrow {
+        display: none;
+    }
+    .PhoneInputCountry {
+        &:after {
+            content: "";
+            background-image: url("../../../svg-icons/down-arrow.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 12px;
+            height: 12px;
+            margin-left: 12px;
+        }
+    }
+}
+
+.custom-phone-input-no-flag {
+    .PhoneInputCountry {
+        display: none;
+    }
+}
+
+.no-border-input {
+    border: 0;
+    height: rem(24px);
+    padding: 0;
+    border-radius: 0;
+    .PhoneInputInput {
+        border: 0;
+        height: rem(24px);
+        padding: 0;
+        &:disabled {
+            background-color: transparent;
+        }
+    }
+}

@@ -1,0 +1,235 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.radio-title {
+    font-size: rem(16px);
+    line-height: rem(24px);
+    font-weight: 600;
+}
+
+.radio-inst {
+    font-size: rem(14px);
+    line-height: rem(20px);
+    color: $gray70;
+}
+
+.size-text {
+    position: relative;
+    vertical-align: middle;
+    padding-left: 24px;
+    &:before {
+        content: "";
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: $gray70;
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin: -1.5px 0 0 12px;
+    }
+}
+
+.radio-list {
+    padding: rem(10px) 0;
+}
+
+.detail-block {
+    padding: rem(20px) 0;
+}
+
+.textarea-block {
+    margin-top: rem(16px);
+}
+
+//banner
+.banner-section {
+    position: relative;
+}
+
+.banner-img {
+    position: relative;
+    min-height: rem(240px);
+    img {
+        @include img-aspect-ratio;
+        object-fit: cover;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    }
+}
+
+.banner-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.white-box {
+    background-color: $white;
+    border-radius: rem(12px);
+    border: 1px solid $gray10;
+    max-width: 100%;
+    width: rem(612px);
+    padding: rem(32px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: rem(140px);
+}
+
+.details-container {
+    padding: rem(60px) rem(24px);
+}
+
+.display-only-desktop {
+    display: none;
+}
+
+.mobile-back-btn {
+    width: rem(36px);
+    height: rem(36px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: rem(12px) rem(16px);
+    a,
+    button {
+        width: rem(36px);
+        height: rem(36px);
+        border-radius: 50%;
+        background-color: rgba($white, .85);
+        backdrop-filter: blur(4px);
+        align-items: center;
+        justify-content: center;
+        display: inline-flex;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: rgba($white, .85);
+            backdrop-filter: blur(4px);
+        }
+    }
+}
+
+.hide-in-desktop {
+    display: inline-block;
+}
+
+.deliver-anything-cart {
+    padding-top: rem(64px);
+}
+
+.price {
+    font-weight: 700;
+}
+
+.deliver-anything-box {
+    padding: rem(10px) rem(24px);
+    border: 0;
+}
+
+.deliver-anything-listing {
+    margin: rem(16px) rem(-24px);
+}
+
+.deliver-anything-list {
+    padding: rem(16px) rem(24px);
+    border-top: 1px solid $gray10;
+    &:last-child {
+        border-bottom: 1px solid $gray10;
+    }
+}
+
+.inst {
+    @include multi-line-ellipsis-2;
+}
+
+@media(min-width:$xl-device) {
+    .deliver-anything-section {
+        padding-top: rem(64px);
+    }
+    .details-container {
+        padding: 0;
+    }
+    .display-only-desktop {
+        display: block;
+    }
+    .hide-in-desktop {
+        display: none;
+    }
+    .banner-img {
+        min-height: rem(296px);
+    }
+}
+
+@media(max-width:$xl-device - 1) {
+    .white-box {
+        margin: rem(140px) 0 0 rem(16px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 11;
+        padding: rem(20px);
+    }
+    .banner-content {
+        justify-content: flex-end;
+        padding: rem(8px);
+    }
+}
+
+@media(max-width:$lg-device - 1) {
+    .white-box {
+        width: calc(100% - 32px);
+        margin: rem(140px) auto 0 auto;
+        right: 0;
+    }
+}
+
+@media(max-width:$sm-device) {
+    .white-box {
+        padding: rem(12px);
+        min-height: rem(108px);
+        width: calc(100% - 16px);
+    }
+    .title {
+        font-size: rem(24px);
+        line-height: rem(32px);
+    }
+    .deliver-anything-cart {
+        padding-top: 3.5rem;
+    }
+    .deliver-anything-box {
+        padding: rem(10px) rem(20px);
+    }
+    .deliver-anything-listing {
+        margin: rem(16px) rem(-20px);
+    }
+    .deliver-anything-list {
+        padding: rem(16px) rem(20px);
+    }
+    .details-container {
+        padding-top: rem(30px);
+    }
+    .mobile-back-btn {
+        margin: rem(12px);
+    }
+}

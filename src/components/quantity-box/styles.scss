@@ -1,0 +1,30 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.quantity-box {
+    display: flex;
+    align-items: center;
+}
+
+.value {
+    font-size: rem(16px);
+    line-height: rem(24px);
+    font-weight: 600;
+    min-width: rem(32px);
+    text-align: center;
+    padding: 0 rem(8px);
+}
+
+.quantity-box-lg {
+    .value {
+        font-size: rem(20px);
+        line-height: rem(28px);
+        font-weight: 700;
+        min-width: rem(48px);
+    }
+}
+
+.disable-value {
+    .value {
+        color: $gray70;
+    }
+}

@@ -1,0 +1,119 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+$min-h: rem(330px);
+$min-h-lg: rem(370px);
+.min-h-box {
+    min-height: $min-h - rem(74px);
+}
+
+.site-footer {
+    background-color: $gray5;
+    padding: rem(64px) 0 rem(90px) 0;
+    min-height: $min-h;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+}
+
+.flex-left {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding-right: rem(147px);
+}
+
+.logo {
+    width: rem(100px);
+    img {
+        width: 100%;
+    }
+}
+
+.sm-icon,
+.logo {
+    display: inline-block;
+}
+
+.sm-icon {
+    width: rem(20px);
+    height: rem(20px);
+    img {
+        width: rem(20px);
+        height: rem(20px);
+    }
+}
+
+.copy-right-text,
+.footer-link {
+    font-size: rem(14px);
+    line-height: rem(16px);
+    margin-bottom: 0;
+}
+
+.footer-link {
+    color: $black;
+    padding-bottom: 1rem;
+    display: block;
+    &:last-child {
+        padding-bottom: 0;
+    }
+}
+
+.copy-right-text {
+    color: $gray70;
+}
+
+.copy-right-div {
+    margin-top: rem(-16px);
+}
+
+@media(max-width: $xl-device - 1) {
+    .min-h-footer-cart {
+        min-height: $min-h + rem(74px) + rem(104px);
+    }
+    .min-h-box {
+        min-height: $min-h - rem(74px);
+    }
+}
+
+@media(max-width: $lg-device) {
+    .min-h-box {
+        min-height: $min-h-lg;
+    }
+    .site-footer {
+        min-height: $min-h-lg + rem(74px);
+        padding: rem(50px) 0 rem(47.02px) 0;
+    }
+    .flex-left {
+        flex-direction: column;
+        justify-content: inherit;
+        padding-right: 0;
+    }
+    .copy-right-div {
+        margin-top: rem(28px);
+    }
+    .logo {
+        width: rem(81.25px);
+        margin-bottom: rem(20px);
+    }
+    .min-h-footer-cart {
+        min-height: $min-h-lg + rem(74px) + rem(104px);
+    }
+}
+
+@media(max-width: $sm-device) {
+    .min-h-box {
+        min-height: $min-h-lg;
+    }
+    .site-footer {
+        min-height: $min-h-lg + rem(64px);
+    }
+    .min-h-footer-cart {
+        min-height: $min-h-lg + rem(64px) + rem(104px);
+    }
+}

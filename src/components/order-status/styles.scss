@@ -1,0 +1,238 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.circle-icon {
+    width: rem(72px);
+    height: rem(72px);
+    background-color: $danger;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: rem(20px);
+    img {
+        width: rem(36px);
+        vertical-align: middle;
+    }
+}
+
+.circle-44 {
+    width: rem(44px);
+    height: rem(44px);
+    background-color: $primary;
+    img {
+        width: rem(16px);
+    }
+}
+
+.circle-outline {
+    background-color: $white;
+    border: 1px solid $primary;
+}
+
+.center-box {
+    text-align: center;
+    padding: rem(24px) 0;
+}
+
+.order-status-container {
+    padding-top: rem(24px);
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(8px);
+    align-items: flex-start;
+}
+
+.map-section {
+    position: relative;
+    min-height: rem(400px);
+    border-radius: rem(12px);
+    margin: rem(24px) 0;
+    .map-image {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: rem(12px);
+        object-fit: cover;
+    }
+}
+
+.summary-details {
+    padding: rem(48px) 0;
+}
+
+.desktop-back-btn {
+    display: none;
+}
+
+.hide-in-desktop {
+    margin-top: rem(10px);
+}
+
+.map-route,
+.icon-1,
+.icon-2,
+.icon-3,
+.icon-4 {
+    position: absolute;
+}
+
+.icon-1,
+.icon-2,
+.icon-3,
+.icon-4 {
+    z-index: 1;
+}
+
+.map-route {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 522px;
+    margin: 0 auto;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 522px;
+        height: 100%;
+        margin: rem(35px) auto 0 auto;
+        background-image: url('./images/route.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+.icon-1 {
+    left: 0;
+    bottom: 0;
+    margin: 0 0 21% 0;
+}
+
+.icon-2 {
+    left: 50%;
+    top: 0;
+    margin: 21% 0 0 -4%;
+}
+
+.icon-3 {
+    right: 0;
+    top: 0;
+    margin: 21% 7% 0 0;
+}
+
+.icon-4 {
+    right: 0;
+    bottom: 0;
+    margin: 0 25% 4% 0;
+}
+
+.btn-section {
+    margin: rem(24px) 0;
+}
+
+@media(min-width: $xl-device) {
+    .order-status-container {
+        padding-top: rem(96px);
+    }
+    .order-details-container {
+        max-width: rem(616px);
+        margin: rem(64px) auto 0 auto;
+    }
+    .desktop-back-btn {
+        display: block;
+    }
+    .hide-in-desktop {
+        display: none;
+    }
+    .summary-details {
+        padding: rem(64px) 0;
+        &.pady-30 {
+            padding: rem(30px) 0;
+        }
+    }
+}
+
+@media(max-width: $xl-device - 1) {
+    .order-status-container {
+        max-width: 100%;
+    }
+    .summary-title {
+        font-size: rem(28px);
+        line-height: rem(36px);
+    }
+    .summary-listing {
+        margin: rem(16px) rem(-24px);
+    }
+    .summary-list {
+        border-bottom: 1px solid $gray10;
+        padding: rem(16px) rem(24px);
+        &:first-child {
+            border-top: 1px solid $gray10;
+        }
+    }
+    .summary-total {
+        border-top: 0 !important;
+    }
+}
+
+@media(max-width:$sm-device) {
+    .order-status-container {
+        padding-top: rem(16px);
+    }
+    .flex-col {
+        flex-direction: column;
+    }
+    .map-section {
+        min-height: rem(256px);
+        border-radius: 0;
+        margin: rem(24px) rem(-20px);
+        .map-image {
+            border-radius: 0;
+        }
+    }
+    .map-route {
+        max-width: 318px;
+        &:after {
+            max-width: 318px;
+            margin: rem(20px) auto 0 auto;
+        }
+    }
+    .icon-1 {
+        margin: 0 0 24% -6%;
+    }
+    .icon-2 {
+        margin: 21% 0 0 -2%;
+    }
+    .icon-3 {
+        margin: 21% 7% 0 0;
+    }
+    .icon-4 {
+        margin: 0 25% 7% 0;
+    }
+    .circle-44 {
+        width: rem(28px);
+        height: rem(28px);
+        img {
+            width: rem(12px);
+        }
+    }
+    .summary-title {
+        font-size: rem(24px);
+        line-height: rem(32px);
+    }
+}

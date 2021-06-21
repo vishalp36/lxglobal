@@ -1,0 +1,121 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.faq-section {
+    margin: rem(40px) 0 rem(20px) 0;
+}
+
+.faq-section-title {
+    margin-bottom: rem(16px);
+}
+
+.faq-nav-col {
+    padding: rem(8px) rem(12px);
+    width: auto !important;
+    &:first-child {
+        padding-left: rem(20px);
+    }
+    &:last-child {
+        padding-left: rem(20px);
+    }
+}
+
+.faq-nav-link {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    border-bottom: 2px solid transparent;
+    padding-bottom: rem(4px);
+    color: $gray;
+    cursor: pointer;
+    &.active {
+        border-color: $primary;
+        color: $primary;
+    }
+    &:hover {
+        color: $primary;
+    }
+}
+
+.faq-list-wrap {
+    max-width: rem(832px);
+    width: 100%;
+    padding: rem(20px);
+    margin: auto;
+}
+
+.faq-list {
+    padding: rem(16px);
+    border: 1px solid $gray10;
+    border-radius: rem(12px);
+    margin-bottom: rem(20px);
+    &.active {
+        .faq-list-header:after {
+            transform: rotate(90deg);
+        }
+        .faq-list-body {
+            display: block;
+        }
+    }
+}
+
+.faq-list-header {
+    padding-right: rem(40px);
+    position: relative;
+    cursor: pointer;
+    &:after {
+        content: "";
+        position: absolute;
+        width: rem(40px);
+        height: rem(28px);
+        top: 0;
+        right: 0;
+        background: url("./images/right-arrow.svg") no-repeat center center;
+        background-size: rem(12px);
+        transition: all 0.4s ease;
+    }
+}
+
+.faq-list-header-title {
+    margin: 0;
+}
+
+.faq-list-body {
+    display: none;
+    p {
+        margin-top: rem(16px);
+        margin-bottom: 0;
+        font-size: rem(15px);
+        line-height: rem(20px);
+        color: $gray;
+        max-width: rem(580px);
+    }
+}
+
+@media (min-width: $lg-device) {
+    .faq-section {
+        margin: rem(96px) 0 rem(64px) 0;
+    }
+    .faq-nav-col {
+        padding: rem(32px) rem(16px);
+        &:first-child {
+            padding-left: rem(32px);
+        }
+        &:last-child {
+            padding-left: rem(32px);
+        }
+    }
+    .faq-list {
+        padding: rem(20px);
+        margin-bottom: rem(32px);
+    }
+    .faq-list-body {
+        p {
+            font-size: rem(16px);
+            line-height: rem(24px);
+        }
+    }
+}
+
+.text-center {
+    text-align: center !important;
+}

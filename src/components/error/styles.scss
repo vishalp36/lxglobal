@@ -1,0 +1,326 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+:root {
+    --itemZ: 2;
+    --cameraSpeed: 250; // Where 1 is the fastest
+}
+
+@include keyframes (bloom) {
+    0% {
+        transform: scale(.3);
+        perspective: 10px;
+    }
+    100% {
+        transform: scale(1);
+        perspective: 10000px;
+    }
+}
+
+@include keyframes (bloom2) {
+    0% {
+        ///transform: scale(.5);
+        perspective: 10000px;
+    }
+    100% {
+        // transform: scale(1);
+        perspective: 50000px;
+    }
+}
+
+@include keyframes (bloom3) {
+    0% {
+        ///transform: scale(.5);
+        perspective: 50000px;
+    }
+    100% {
+        // transform: scale(1);
+        perspective: 100000px;
+    }
+}
+
+@include keyframes (fadeIn) {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@include keyframes (moveLeftTop) {
+    0% {
+        transform: translate(40%, 20%);
+    }
+    1% {
+        transform: translate(20%, 10%);
+    }
+    50% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(-100%, -100%);
+    }
+}
+
+@include keyframes (moveLeftBottom) {
+    0% {
+        transform: translate(40%, 20%);
+    }
+    1% {
+        transform: translate(20%, 40%);
+    }
+    50% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(-100%, 130%);
+    }
+}
+
+@include keyframes (moveRightTop) {
+    0% {
+        transform: translate(-30%, 20%);
+    }
+    1% {
+        transform: translate(-20%, 10%);
+    }
+    50% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(130%, -100%);
+    }
+}
+
+@include keyframes (moveRightBottom) {
+    0% {
+        transform: translate(-30%, 20%);
+    }
+    1% {
+        transform: translate(-20%, 40%);
+    }
+    50% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(130%, 130%);
+    }
+}
+
+.error-page {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.error-inst {
+    max-width: rem(660px);
+    margin: 0 auto rem(24px) auto;
+    font-size: rem(15px);
+    line-height: rem(20px);
+    color: $gray;
+    padding: 0 rem(20px);
+    text-align: center;
+}
+
+.content {
+    animation: fadeIn .6s forwards;
+    opacity: 0;
+    visibility: hidden;
+    animation-delay: .2s;
+    padding: rem(20px);
+    position: relative;
+    text-align: center;
+    max-width: em(565px);
+    margin: 0 auto;
+}
+
+.grid {
+    pointer-events: none;
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    display: grid;
+    grid-template-columns: repeat(50, 2%);
+    grid-template-rows: repeat(50, 2%);
+    perspective: 100px;
+    animation: bloom 2s ease-out forwards, bloom2 4s 2s ease-in-out forwards, bloom3 6s 8s ease-in-out forwards;
+}
+
+.grid-item {
+    position: relative;
+    will-change: transform;
+    aspect-ratio: 1;
+    @for $i from 0 through 18 {
+        &:nth-child(#{$i}) {
+            transform: translate3D( random(50) - 25 * 1%, random(100) - 50 * 1%, calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px));
+        }
+    }
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(6),
+    &:nth-child(16),
+    &:nth-child(18) {
+        animation: moveLeftTop 8s forwards;
+        animation-delay: .2s;
+    }
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(7) {
+        animation: moveLeftBottom 8s forwards;
+        animation-delay: .2s;
+    }
+    &:nth-child(9),
+    &:nth-child(11),
+    &:nth-child(14),
+    &:nth-child(15),
+    &:nth-child(17) {
+        animation: moveRightTop 8s forwards;
+        animation-delay: .2s;
+    }
+    &:nth-child(12),
+    &:nth-child(13),
+    &:nth-child(10),
+    &:nth-child(8) {
+        animation: moveRightBottom 8s forwards;
+        animation-delay: .2s;
+    }
+    &:first-child,
+    &:nth-child(4),
+    &:nth-child(10),
+    &:nth-child(11),
+    &:nth-child(15) {
+        width: em(184px);
+        height: em(184px);
+    }
+    &:nth-child(2),
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(9) {
+        width: em(108px);
+        height: em(108px);
+    }
+    &:nth-child(3),
+    &:nth-child(13),
+    &:nth-child(14) {
+        width: em(140px);
+        height: em(140px);
+    }
+    &:nth-child(12),
+    &:nth-child(17),
+    &:nth-child(18),
+    &:nth-child(8),
+    &:nth-child(16) {
+        width: em(76px);
+        height: em(76px);
+    }
+    &:first-child {
+        grid-area: 1 / 3 / 9 / 7;
+    }
+    &:nth-child(2) {
+        grid-area: 11 / 6 / 16 / 20;
+    }
+    &:nth-child(3) {
+        grid-area: 23 / 5 / 29 / 27;
+    }
+    &:nth-child(4) {
+        grid-area: 37 / 2 / 45 / 32;
+    }
+    &:nth-child(5) {
+        grid-area: 29 / 11 / 34 / 27;
+    }
+    &:nth-child(6) {
+        grid-area: 4 / 16 / 9 / 51;
+    }
+    &:nth-child(7) {
+        grid-area: 38 / 19 / 43 / 18;
+    }
+    &:nth-child(8) {
+        grid-area: 30 / 39 / 33 / 47;
+    }
+    &:nth-child(9) {
+        grid-area: 20 / 41 / 25 / 46;
+    }
+    &:nth-child(10) {
+        grid-area: 33 / 45 / 41 / 47;
+    }
+    &:nth-child(11) {
+        grid-area: 8 / 45 / 16 / 47;
+    }
+    &:nth-child(12) {
+        grid-area: 36 / 30 / 39 / 47;
+    }
+    &:nth-child(13) {
+        grid-area: 41 / 34 / 47 / 47;
+    }
+    &:nth-child(14) {
+        grid-area: 7 / 29 / 13 / 39;
+    }
+    &:nth-child(15) {
+        grid-area: 9 / 37 / 1/ 40;
+    }
+    &:nth-child(16) {
+        grid-area: 14 / 13 / 17 / 37;
+    }
+    &:nth-child(17) {
+        grid-area: 16 / 35 / 13 / 37;
+    }
+    &:nth-child(18) {
+        grid-area: 15 / 21 / 18 / 37;
+    }
+}
+
+.item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: rem(12px);
+    background-repeat: no-repeat;
+}
+
+@media(min-width: $xl-device) {
+    .content {
+        max-width: rem(700px);
+    }
+}
+
+@media(max-width: $lg-device - 1) {
+    .grid {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: $sm-device) {
+    .content {
+        max-width: rem(432px);
+    }
+    .item {
+        background-size: 60%;
+        background-position: left;
+    }
+    .grid {
+        font-size: 12px;
+    }
+    .content {
+        background-color: $white;
+    }
+}
+
+@media only screen and (min-device-width: 2px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .grid {
+        font-size: 10px;
+    }
+}

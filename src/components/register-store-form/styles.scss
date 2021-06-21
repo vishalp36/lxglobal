@@ -1,0 +1,77 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+
+.register-rider-form-section {
+  background: $primary;
+  padding-top: rem(64px);
+  padding-bottom: rem(64px);
+}
+.form-title {
+  text-align: center;
+  color: $white;
+  margin-bottom: rem(8px);
+}
+.form-sub-text {
+  text-align: center;
+  color: $white;
+  font-size: rem(16px);
+  line-height: rem(24px);
+  max-width: rem(640px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: rem(24px);
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+.col {
+  width: 100%;
+  margin-bottom: rem(20px);
+  max-width: rem(488px);
+  label {
+    color: $white;
+    font-size: rem(16px);
+    line-height: rem(24px);
+  }
+}
+.form-btn {
+  width: 100%;
+  margin-top: rem(12px);
+}
+
+@media (min-width: $md-device) {
+  .register-rider-form-section {
+    padding-top: rem(80px);
+    padding-bottom: rem(80px);
+  }
+  .form-title {
+    margin-bottom: rem(12px);
+  }
+  .form-sub-text {
+    margin-bottom: rem(32px);
+  }
+}
+@media (min-width: $lg-device) {
+  .register-rider-form-section {
+    padding-top: rem(96px);
+    padding-bottom: rem(96px);
+  }
+  .form-sub-text {
+    max-width: rem(832px);
+  }
+}
+@media (min-width: $xl-device) {
+  .register-rider-form-section {
+    padding-top: rem(132px);
+    padding-bottom: rem(132px);
+  }
+  .form-title {
+    margin-bottom: rem(16px);
+  }
+  .form-sub-text {
+    margin-bottom: rem(48px);
+  }
+}

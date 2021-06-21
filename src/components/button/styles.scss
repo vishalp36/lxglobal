@@ -1,0 +1,426 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.btn {
+    font-size: $btn-font-size;
+    line-height: $btn-line-height;
+    border-radius: $btn-border-radius;
+    font-weight: $btn-font-weight;
+    border: 1px solid $primary;
+    background-color: $primary;
+    padding: rem(15px) rem(19px);
+    color: $white;
+    transition: 0.3s all ease-in-out;
+    margin: 0;
+    position: relative;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: $hover-primary;
+        outline: 0;
+    }
+    &:disabled,
+    &.btn-disabled {
+        background-color: $disabled-button-bg;
+        border-color: $disabled-button-bg;
+        cursor: not-allowed;
+        pointer-events: none;
+        user-select: none;
+        &:hover,
+        &:focus,
+        &:active {
+            box-shadow: none;
+            background-color: $disabled-button-bg;
+        }
+    }
+}
+
+.btn-lg {
+    padding: rem(17px) rem(19.21px);
+}
+
+.btn-sm {
+    padding: rem(11px) rem(19.21px);
+}
+
+.btn-secondary {
+    border: 1px solid $secondary-color;
+    background-color: $secondary-color;
+    color: $gray-dark;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: $hover-secondary-color;
+    }
+    &:disabled,
+    &.btn-disabled {
+        color: $disabled-button-color;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $disabled-button-bg;
+        }
+    }
+}
+
+.btn-danger {
+    border: 1px solid $danger;
+    background-color: $danger;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: darken($danger, 5%);
+    }
+}
+
+.btn-link {
+    background-color: transparent;
+    border: none;
+    color: $primary;
+    padding: rem(10px) 0;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: transparent;
+        color: $hover-primary;
+    }
+    &:disabled,
+    &.btn-disabled {
+        background-color: transparent;
+        color: $disabled-button-color;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: transparent;
+        }
+    }
+}
+
+.btn-link-gray {
+    color: $gray;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: darken($gray, 5%);
+    }
+}
+
+.btn-link-underline {
+    font-size: rem(20px);
+    line-height: rem(20px);
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-thickness: from-font;
+    color: $btn-link-color;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: $gray-dark;
+    }
+}
+
+.btn-icon {
+    padding: 0.25rem;
+    min-width: rem(40px);
+    min-height: rem(40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: rem(12px);
+    img {
+        width: rem(18px);
+        height: rem(18px);
+        vertical-align: middle;
+    }
+}
+
+.btn-xs-icon {
+    min-width: rem(24px);
+    min-height: rem(24px);
+    border-radius: rem(8px);
+    img,
+    .svg-icon {
+        width: rem(11.5px);
+        height: rem(11.5px);
+    }
+}
+
+.btn-sm-icon {
+    min-width: rem(32px);
+    min-height: rem(32px);
+    img,
+    .svg-icon {
+        width: rem(14px);
+        height: rem(14px);
+    }
+}
+
+.btn-md-icon {
+    min-width: rem(36px);
+    min-height: rem(36px);
+    border-radius: rem(11px);
+}
+
+.btn-lg-icon {
+    min-width: rem(48px);
+    min-height: rem(48px);
+    img,
+    .svg-icon {
+        width: rem(14px);
+        height: rem(14px);
+    }
+}
+
+.btn-quantity-plus-icon {
+    min-width: rem(84px);
+    border-radius: rem(12px);
+}
+
+.loading {
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+    &:after {
+        content: " ";
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        background: url("./images/loader.svg") no-repeat transparent center;
+        overflow: hidden;
+        transition: 0.2s all linear;
+        background-size: 80% 80%;
+        z-index: 3;
+        background-color: $primary;
+    }
+}
+
+.btn-secondary-loader {
+    &:after {
+        background-image: none;
+        background-color: $black;
+        -webkit-mask: url("./images/loader.svg") no-repeat center;
+        mask: url("./images/loader.svg") no-repeat center;
+        mask-size: 80% 80%;
+    }
+    &:before {
+        content: " ";
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        overflow: hidden;
+        transition: 0.2s all linear;
+        z-index: 3;
+        background-color: $secondary-color;
+    }
+}
+
+//delivery address button
+.btn-link-with-icon {
+    display: inline-flex;
+    color: $white;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: rem(20px);
+        height: rem(20px);
+        margin-right: rem(4px);
+    }
+    span {
+        line-height: rem(20px);
+    }
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: $white;
+    }
+}
+
+.btn-link-with-icon-primary {
+    @extend .btn-link-with-icon;
+    color: $primary;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: $hover-primary;
+    }
+}
+
+.btn-link-white {
+    color: $white;
+    line-height: rem(20px);
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: $white;
+    }
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.btn-link-14 {
+    font-size: rem(14px);
+    line-height: rem(16px);
+    color: $gray70;
+}
+
+.btn-left-icon {
+    img {
+        width: rem(20px);
+        margin-right: rem(13px);
+    }
+}
+
+.btn-left-icon-flex {
+    display: flex;
+    align-items: center;
+    img {
+        margin-right: rem(8px);
+    }
+}
+
+.btn-left-sm-icon {
+    img {
+        width: rem(12px);
+        margin-right: 0;
+    }
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-outline-gray {
+    background-color: transparent;
+    border-color: $gray10;
+    color: $black;
+    font-weight: 400;
+    .svg-icon {
+        color: $primary;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: transparent;
+        border-color: $primary;
+        border-width: 1px;
+    }
+    &:disabled,
+    &.btn-disabled {
+        background-color: $gray10;
+        border-color: $gray20;
+        border-radius: rem(12px);
+        .svg-icon {
+            color: $white;
+        }
+    }
+    &.active {
+        background-color: $primary;
+        color: $white;
+        font-weight: 600;
+        .svg-icon {
+            color: $white;
+        }
+    }
+}
+
+.minus-disable {
+    .svg-icon {
+        color: $gray70 !important;
+    }
+}
+
+.both-disable {
+    &:disabled,
+    &.btn-disabled {
+        background-color: $gray20;
+        border-color: $gray20;
+    }
+}
+
+.btn-link-icon {
+    padding: rem(2px);
+    img {
+        width: rem(11px);
+    }
+}
+
+.btn-link-lg-icon {
+    img {
+        width: rem(18px);
+    }
+}
+
+.font-weight-normal {
+    font-weight: 400;
+}
+
+.btn-link-secondary {
+    color: $secondary-color;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: $hover-secondary-color;
+    }
+}
+
+.btn-link-right-icon {
+    padding-right: rem(30px);
+    img {
+        width: rem(20px);
+        vertical-align: middle;
+        transition: .2s all ease;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin: rem(-5px) rem(6px) 0 0;
+    }
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        img {
+            margin-right: 0;
+        }
+    }
+}
+
+.btn-link-gray {
+    color: $gray;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: $primary;
+    }
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: $lg-device - 1) {
+    .btn-quantity-plus-icon {
+        width: 100%;
+    }
+}

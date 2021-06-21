@@ -1,0 +1,193 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.add-to-cart-box {
+    position: fixed;
+    top: 0;
+    right: -348px;
+    width: 348px;
+    max-width: 348px;
+    //z-index: 1050;
+    z-index: 99;
+    margin: rem(136px) rem(-636px) 0 0;
+    transition: .2s all linear;
+    animation: slide-right .6s forwards;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $gray-dark;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s all linear;
+    //z-index: 999;
+    z-index: 98;
+    &.open {
+        opacity: 0;
+        visibility: visible;
+    }
+}
+
+.active-box {
+    .add-to-cart-box {
+        right: 50%;
+        animation: slide-left .6s forwards;
+    }
+    // .overlay {
+    //     opacity: 0;
+    //     visibility: visible;
+    // }
+}
+
+.top-header {
+    background-color: $primary;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 rem(16px) rem(16px);
+    padding: rem(10px) rem(20px);
+    transition: .2s all linear;
+    cursor: pointer;
+}
+
+.cat-name {
+    background-color: $gray10;
+    font-size: rem(14px);
+    line-height: rem(20px);
+    margin-bottom: 0;
+    padding: rem(6px) rem(12px);
+}
+
+.box-footer {
+    background: $white;
+    box-shadow: inset 0px 1px 0px $gray20;
+    padding: rem(12px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.list {
+    padding: rem(12px) rem(12px) 0 rem(12px);
+}
+
+.listing {
+    margin-bottom: rem(12px);
+}
+
+.overflow-scroll {
+    height: calc(100vh - 245px);
+    overflow-y: auto;
+    @include scrollbars(0, 5px, 24px, $white, $gray10, $gray20);
+}
+
+.cart-icon,
+.delete-icon {
+    vertical-align: middle;
+    width: rem(18px) !important;
+    transition: .2s all linear;
+}
+
+.delete-icon {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.cart-icon {
+    margin-right: rem(8px);
+}
+
+.price-text {
+    font-weight: 700;
+    font-size: rem(16px);
+    line-height: rem(20px);
+    vertical-align: middle;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.cart-list {
+    transition: all .2s ease-in-out;
+    background-color: $white;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    &.empty-cart {
+        height: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 rem(24px);
+        .overflow-scroll {
+            height: auto;
+        }
+    }
+}
+
+.cart-open {
+    box-shadow: inset 1px 0px 0px #EFF0F1, inset -1px 0px 0px #EFF0F1;
+    .cart-list {
+        height: calc(100vh - 181px);
+        opacity: 1;
+        visibility: visible;
+        box-shadow: inset 1px 0px 0px #EFF0F1, inset -1px 0px 0px #EFF0F1;
+        &.empty-cart {
+            height: calc(100vh - 181px);
+        }
+    }
+    .top-header {
+        border-radius: 0;
+        padding: rem(10px) rem(12px);
+        cursor: inherit;
+    }
+    .delete-icon {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.min-h-64 {
+    min-height: rem(64px);
+}
+
+.empty-cart-title {
+    font-weight: 600;
+    font-size: rem(16px);
+    line-height: rem(24px);
+}
+
+.empty-cart-inst {
+    font-size: rem(14px);
+    line-height: rem(20px);
+    color: $gray;
+}
+
+@include keyframes (slide-left) {
+    0% {
+        right: -348px;
+    }
+    100% {
+        right: 50%;
+    }
+}
+
+@include keyframes (slide-right) {
+    0% {
+        right: 50%;
+    }
+    100% {
+        right: -348px;
+    }
+}

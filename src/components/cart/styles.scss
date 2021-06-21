@@ -1,0 +1,129 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.visible-only-desktop {
+    display: none;
+}
+
+.cart-content-section {
+    padding-top: 4rem;
+}
+
+.cart-list-container {
+    padding: rem(24px);
+}
+
+.list-section {
+    margin: rem(16px) rem(-24px);
+}
+
+.list {
+    margin: -1px 0;
+}
+
+.inst {
+    font-size: rem(14px);
+    line-height: rem(20px);
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fix-cart-footer {
+    background-color: $white;
+    box-shadow: inset 0px 1px 0px $gray20;
+    padding: rem(16px) rem(24px) rem(12px) rem(24px);
+    position: fixed;
+    bottom: 0;
+    margin-bottom: rem(74px);
+    left: 0;
+    right: 0;
+    z-index: 11;
+}
+
+.price {
+    font-weight: 700;
+    font-size: rem(16px);
+    line-height: rem(16px);
+}
+
+.slider-section {
+    background-color: $gray5;
+    padding: rem(20px) rem(24px);
+}
+
+.slider-title {
+    margin-bottom: rem(16px);
+}
+
+.empty-cart-title {
+    font-weight: 600;
+    font-size: rem(16px);
+    line-height: rem(24px);
+}
+
+.empty-cart-inst {
+    font-size: rem(14px);
+    line-height: rem(20px);
+    color: $gray;
+    margin-bottom: rem(20px);
+}
+
+.empty-cart-section {
+    height: calc(100vh - #{rem(64px) + rem(74px)});
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 rem(38px);
+    text-align: center;
+}
+
+.min-h-box {
+    min-height: rem(104px);
+}
+
+.center-box {
+    text-align: center;
+}
+
+.btn-div {
+    margin: rem(16px) 0;
+    width: 100%;
+    display: inline-block;
+}
+
+.modal-title {
+    margin-bottom: rem(16px);
+}
+
+.old-price {
+    font-size: rem(14px);
+    line-height: rem(20px);
+    color: $gray70;
+    margin-right: rem(8px);
+    text-decoration: line-through;
+}
+
+@media(min-width: $xl-device) {
+    .visible-only-desktop {
+        display: block;
+    }
+    .hide-in-desktop {
+        display: none;
+    }
+}
+
+@media(max-width:$sm-device) {
+    .cart-content-section {
+        padding-top: 3.5rem;
+    }
+    .fix-cart-footer {
+        padding: rem(16px) rem(20px) rem(12px) rem(20px);
+        margin-bottom: rem(64px);
+    }
+    .empty-cart-section {
+        height: calc(100vh - #{rem(56px) + rem(64px)});
+    }
+}

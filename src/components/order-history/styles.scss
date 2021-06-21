@@ -1,0 +1,113 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.breadcrumbs-section {
+    margin: rem(16px) rem(-24px) 0 rem(-24px);
+}
+
+.history-row {
+    border-bottom: 1px solid $gray10;
+    padding: rem(12px) 0;
+    display: block;
+    &:hover {
+        .box {
+            background-color: $gray5;
+        }
+    }
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-no {
+    color: $gray70;
+    font-weight: 600;
+}
+
+.row-title {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: rem(12px);
+    margin-bottom: 0;
+}
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: rem(5px) rem(-12px) 0 rem(-12px);
+    align-items: center;
+}
+
+.inline {
+    position: relative;
+    padding: 0 rem(12px);
+    font-size: rem(14px);
+    line-height: rem(20px);
+    color: $gray70;
+    &:before {
+        content: "";
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: $gray70;
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -1.5px;
+    }
+    &:first-child {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.box {
+    border-radius: rem(12px);
+    background-color: transparent;
+    padding: rem(12px);
+    margin: 0 rem(-12px);
+    transition: .2s all linear;
+}
+
+.pagination-section {
+    padding-top: rem(80px);
+}
+
+.flex-div {
+    padding-right: 1rem;
+}
+
+@media(max-width:$xl-device - 1) {
+    .history-container {
+        padding-top: rem(64px);
+    }
+    .history-row {
+        margin: 0 rem(-20px);
+        &:first-child {
+            border-top: 1px solid $gray10;
+        }
+    }
+    .box {
+        margin: 0;
+        padding: rem(12px) rem(20px);
+    }
+}
+
+@media(max-width:$sm-device) {
+    .breadcrumbs-section {
+        margin: 0 rem(-20px);
+    }
+    .history-container {
+        padding-top: rem(56px);
+    }
+    .history-row {
+        padding: 0;
+    }
+    .order-no {
+        display: block;
+    }
+}

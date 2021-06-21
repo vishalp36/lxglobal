@@ -1,0 +1,269 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.light-gray-bg {
+    background: $gray5;
+}
+
+.banner-btn-wrap {
+    margin-top: rem(24px);
+    text-align: center;
+}
+
+.banner-text-btn {
+    white-space: nowrap;
+}
+
+.banner-text-content {
+    display: none;
+    padding-left: rem(20px);
+    color: $gray;
+    font-size: rem(15px);
+}
+
+.banner-title-txt {
+    font-size: rem(32px);
+    line-height: rem(40px);
+}
+
+@media (min-width: $md-device) {
+    .banner-btn-wrap {
+        margin-top: rem(32px);
+    }
+    .banner-title-txt {
+        font-size: rem(48px);
+        line-height: rem(56px);
+    }
+}
+
+@media (min-width: $lg-device) {
+    .banner-btn-wrap {
+        margin-top: rem(24px);
+    }
+    .banner-btn-wrap {
+        text-align: left;
+    }
+}
+
+@media (min-width: $xl-device) {
+    .banner-btn-wrap {
+        margin-top: rem(28px);
+        display: flex;
+        align-items: center;
+    }
+    .banner-text-content {
+        display: block;
+    }
+    .banner-title-txt {
+        font-size: rem(56px);
+        line-height: rem(64px);
+    }
+}
+
+// Become Rider Card Box Start
+.become-rider-box-section {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+}
+
+.become-rider-box-col {
+    padding-top: rem(32px);
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+}
+
+@media (min-width: $md-device) {
+    .become-rider-box-section {
+        padding-top: rem(80px);
+        padding-bottom: rem(80px);
+    }
+    .become-rider-box-col {
+        max-width: 33.33333%;
+        flex: 0 0 33.33333%;
+    }
+}
+
+@media (min-width: $lg-device) {
+    .become-rider-box-section {
+        padding-top: rem(96px);
+        padding-bottom: rem(96px);
+    }
+}
+
+@media (min-width: $xl-device) {
+    .become-rider-box-section {
+        padding-top: rem(100px);
+        padding-bottom: rem(160px);
+    }
+}
+
+// Become Rider Card Box End
+// Become Rider Testimonial Start
+.rider-testimonial {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+    background: $gray5;
+}
+
+.rider-testimonial-wrap {
+    margin-top: rem(24px);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid $gray10;
+    border-radius: rem(12px);
+    overflow: hidden;
+}
+
+.rider-testimonial-img-wrap {
+    // width: rem(334px);
+    width: 100%;
+    min-height: rem(264px);
+    height: auto;
+    max-width: 100%;
+}
+
+.rider-testimonial-img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    max-height: 324px;
+}
+
+.rider-testimonial-text-wrap {
+    height: 100%;
+    width: 100%;
+    padding: rem(36px) rem(24px);
+}
+
+.rider-testimonial-text {
+    font-size: rem(18px);
+    line-height: rem(24px);
+}
+
+.rider-testimonial-user {
+    font-size: rem(16px);
+    line-height: rem(24px);
+    margin-top: rem(12px);
+    color: $gray;
+}
+
+.rider-testimonial-text:before {
+    content: "“";
+    display: inline-block;
+    font-size: rem(64px);
+    line-height: rem(24px);
+    color: $gray20;
+    font-family: "Nunito", sans-serif;
+}
+
+@media (min-width: $md-device) {
+    .rider-testimonial {
+        padding-top: rem(80px);
+        padding-bottom: rem(80px);
+    }
+    .rider-testimonial-wrap {
+        margin-top: rem(26px);
+        // max-width: rem(600px);
+        flex-direction: row;
+    }
+    .rider-testimonial-img-wrap {
+        width: rem(292px);
+        height: rem(360px);
+    }
+    .rider-testimonial-img {
+        max-height: unset;
+        object-position: 25%;
+    }
+    .rider-testimonial-text-wrap {
+        width: calc(100% - 292px);
+        //padding: rem(108px) rem(32px) rem(100px);
+        padding: rem(32px);
+    }
+    .rider-testimonial-user {
+        margin-top: rem(16px);
+    }
+}
+
+@media (min-width: $lg-device) {
+    .rider-testimonial {
+        padding-top: rem(96px);
+        padding-bottom: rem(96px);
+    }
+    .rider-testimonial-wrap {
+        margin-top: rem(40px);
+        // max-width: rem(704px);
+    }
+    .rider-testimonial-img-wrap {
+        width: rem(326px);
+        height: rem(400px);
+    }
+    .rider-testimonial-text-wrap {
+        width: calc(100% - 326px);
+        //padding: rem(104px) rem(40px) rem(104px);
+        padding: rem(40px);
+    }
+    .rider-testimonial-text {
+        font-size: rem(24px);
+        line-height: rem(32px);
+    }
+    .rider-testimonial-user {
+        font-size: rem(16px);
+        line-height: rem(24px);
+        margin-top: rem(20px);
+    }
+    .rider-testimonial-text:before {
+        font-size: rem(80px);
+        line-height: rem(32px);
+    }
+}
+
+@media (min-width: $xl-device) {
+    .rider-testimonial-wrap {
+        margin-top: rem(40px);
+        // max-width: rem(1048px);
+    }
+    .rider-testimonial-img-wrap {
+        width: rem(400px);
+        height: rem(492px);
+    }
+    .rider-testimonial-text-wrap {
+        width: calc(100% - 400px);
+        // padding: rem(132px) rem(120px) rem(120px);
+        padding: rem(120px);
+    }
+    .rider-testimonial-text {
+        font-size: rem(32px);
+        line-height: rem(40px);
+    }
+    .rider-testimonial-user {
+        font-size: rem(20px);
+        line-height: rem(32px);
+        margin-top: rem(28px);
+    }
+    .rider-testimonial-text:before {
+        font-size: rem(90px);
+        line-height: rem(40px);
+    }
+}
+
+// Become Rider Testimonial End
+//Helper Classes
+.text-center {
+    text-align: center !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: rem(-16px);
+    margin-right: rem(-16px);
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}

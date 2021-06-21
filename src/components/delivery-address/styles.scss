@@ -1,0 +1,179 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.modal-desktop-title {
+    display: none;
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.search-result-container {
+    margin: rem(24px) 0 rem(20px) 0;
+    opacity: 0;
+    visibility: visible;
+    transition: .2s all linear;
+    animation: FadeIn .4s forwards;
+}
+
+.search-result-list {
+    display: flex;
+    padding: rem(8px) 0;
+}
+
+.list-icon {
+    width: rem(60px);
+    padding-right: rem(12px);
+}
+
+.icon-box {
+    width: rem(48px);
+    height: rem(48px);
+    border-radius: rem(12px);
+    background-color: $gray10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    width: rem(14px);
+    vertical-align: middle;
+}
+
+.icon-18 {
+    width: rem(18px);
+}
+
+.list-content {
+    flex: 1;
+    display: grid;
+}
+
+.title {
+    font-size: rem(16px);
+    line-height: rem(24px);
+    font-weight: 600;
+    margin-bottom: rem(2px);
+}
+
+.inst {
+    font-size: rem(14px);
+    line-height: rem(20px);
+    color: $gray70;
+    margin-bottom: 0;
+}
+
+.recent-search {
+    margin-top: rem(24px);
+}
+
+.fix-top-header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.row {
+    margin: 0 rem(-10px);
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.col {
+    flex: 1 1 rem(152px);
+    padding: rem(10px);
+}
+
+.btn-confirm {
+    text-align: center;
+    margin-top: rem(12px);
+    button {
+        width: 100%;
+    }
+}
+
+.btn-div {
+    margin: rem(32px) 0 rem(20px) 0;
+}
+
+.address-container {
+    margin-bottom: rem(20px);
+}
+
+.center-box {
+    text-align: center;
+}
+
+.d-block {
+    display: block;
+}
+
+@media(min-width: $xl-device) {
+    .modal-desktop-title {
+        display: block;
+        margin-bottom: rem(16px);
+    }
+    .mobile-back-btn {
+        display: none;
+    }
+    .btn-confirm {
+        button {
+            width: auto;
+        }
+    }
+    .address-container {
+        margin-bottom: rem(16px);
+    }
+}
+
+@media(max-width: $xl-device - 1) {
+    .mobile-back-btn {
+        margin-left: rem(-10px);
+        a {
+            padding: rem(10px);
+        }
+    }
+    .fix-top-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: rem(8px) rem(24px);
+        background-color: $white;
+        z-index: 11;
+    }
+    .input-for-mobile {
+        input {
+            border: 0;
+        }
+    }
+    .search-result-container {
+        margin: 0;
+    }
+}
+
+@media(max-width: $sm-device) {
+    .fix-top-header {
+        padding: rem(8px) rem(20px);
+    }
+    .icon-box {
+        width: rem(44px);
+        height: rem(44px);
+    }
+}
+
+@include keyframes (FadeIn) {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}

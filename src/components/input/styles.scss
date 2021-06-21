@@ -1,0 +1,561 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.form-group {
+    position: relative;
+}
+
+.custom-textarea {
+    resize: none;
+    min-height: rem(140px);
+}
+
+.form-control-select,
+.form-control,
+.select-box {
+    background-color: $input-bg;
+    border: 1px solid $input-border-color;
+    border-radius: rem(12px);
+    width: 100%;
+    height: rem(48px);
+    font-family: $font-family;
+    font-size: rem(16px);
+    line-height: rem(20px);
+    box-shadow: none;
+    appearance: none;
+    color: $gray-dark;
+    padding: 0.5rem 1rem;
+    transition: 0.3s all ease-in-out;
+    &:focus,
+    &:hover,
+    &:active {
+        outline: 0;
+        border-color: $primary;
+    }
+}
+
+.form-control,
+.form-control-select {
+    @include text-truncate;
+}
+
+.form-control {
+    caret-color: $primary;
+    @include placeholder {
+        color: $place-holder-text;
+        transition: 0.3s all ease-in-out;
+    }
+    &:focus {
+        @include placeholder {
+            color: $onfocus-placehoder-text;
+            transition: 0.3s all ease-in-out;
+        }
+    }
+    &:disabled,
+    &.disabled,
+    &:read-only {
+        background-color: $disabled-input-bg;
+        border-color: $disabled-input-border;
+        cursor: not-allowed;
+        pointer-events: none;
+        user-select: none;
+    }
+    &.error,
+    &:invalid {
+        border-color: $danger;
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        box-shadow: 0 0 0 1000px $white inset;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    &:not(.custom-textarea) {
+        @include text-truncate;
+    }
+}
+
+.read-only-box {
+    .form-control {
+        &:read-only {
+            background-color: $gray5;
+            border-color: $gray10;
+        }
+    }
+}
+
+.input-password {
+    input {
+        &:disabled,
+        &.disabled,
+        &:read-only {
+            color: $gray70;
+        }
+    }
+}
+
+//input right icon
+.has-right-icon {
+    .form-control {
+        &:focus,
+        &:active {
+            padding-right: rem(48px);
+            +.right-icon {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.right-icon,
+.left-icon {
+    position: absolute;
+    top: 0;
+    padding: rem(14px);
+    transition: 0.2s all linear;
+    .svg-icon {
+        width: rem(20px);
+        height: rem(20px);
+        vertical-align: middle;
+    }
+}
+
+.right-icon {
+    opacity: 0;
+    visibility: hidden;
+    right: 0;
+}
+
+.left-icon {
+    left: 0;
+    pointer-events: none;
+}
+
+//for password
+.has-right-icon-visible {
+    .right-icon {
+        visibility: visible;
+        opacity: 1;
+        padding: 0;
+        width: rem(48px);
+        height: rem(48px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-control {
+        padding-right: rem(48px);
+    }
+    .show,
+    .hide {
+        position: absolute;
+        left: 0;
+        right: 0;
+        transition: 0.3s all ease-in-out;
+        width: 100% !important;
+    }
+    .hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .active {
+        .show {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .hide {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+//search
+.input-search {
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+        appearance: none;
+    }
+    .left-icon {
+        padding: rem(14px) rem(17px);
+        .svg-icon {
+            color: $gray70;
+            width: rem(15px);
+            height: rem(15px);
+        }
+    }
+    .form-control {
+        background-color: $gray10;
+        &:focus,
+        &:active {
+            background-color: $white;
+            +.right-icon+.left-icon {
+                .svg-icon {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+//header search input
+.header-search-input {
+    .left-icon {
+        .svg-icon {
+            color: $white;
+        }
+    }
+    &.active .form-control {
+        text-overflow: ellipsis !important;
+        padding-right: 1rem !important;
+        max-width: 100%;
+        +.right-icon+.left-icon {
+            left: 0;
+            .svg-icon {
+                color: $white;
+            }
+        }
+        @include placeholder {
+            color: rgba($white, 0.4);
+        }
+        +.right-icon {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    .form-control {
+        color: $white;
+        text-overflow: inherit;
+        transition: 0.3s all ease-in-out;
+        caret-color: $white;
+        max-width: rem(94px);
+        @include placeholder {
+            color: $white;
+            font-weight: 700;
+            @include text-truncate;
+        }
+        &:focus,
+        &:active {
+            text-overflow: ellipsis !important;
+            padding-right: 1rem !important;
+            max-width: 100%;
+            +.right-icon+.left-icon {
+                // right: rem(296px); //320-24
+                left: 0;
+                .svg-icon {
+                    color: $white;
+                }
+            }
+            @include placeholder {
+                color: rgba($white, 0.4);
+            }
+            +.right-icon {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        +.right-icon+.left-icon {
+            width: rem(24px);
+            // right: rem(70px); //94-24
+            left: calc(100% - 94px);
+            transition: 0.3s all ease-in-out;
+        }
+        &:not(:placeholder-shown) {
+            +.right-icon {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    &.header-search-input-primary {
+        .left-icon {
+            .svg-icon {
+                color: $primary;
+            }
+        }
+        .form-control {
+            color: $primary;
+            caret-color: $primary;
+            @include placeholder {
+                color: $primary;
+            }
+            &:focus,
+            &:active {
+                +.right-icon+.left-icon {
+                    .svg-icon {
+                        color: $primary;
+                    }
+                }
+                @include placeholder {
+                    color: rgba($primary, 0.4);
+                }
+            }
+        }
+    }
+}
+
+.has-left-icon {
+    .form-control {
+        padding-left: rem(48px);
+    }
+}
+
+.transparent-input {
+    .form-control {
+        border: none;
+        background-color: transparent;
+        padding-left: rem(30px);
+        padding-right: rem(8px);
+        &:focus,
+        &:active {
+            background-color: transparent;
+        }
+    }
+    &.has-right-icon {
+        .form-control {
+            &:focus,
+            &:active {
+                padding-right: rem(24px);
+            }
+        }
+    }
+    .left-icon,
+    .right-icon {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+//select
+.form-control-select {
+    background-image: url("../input/icons/down-arrow.svg");
+    background-position: calc(100% - 0.75rem) center;
+    background-repeat: no-repeat;
+    background-size: rem(12px);
+    outline: none;
+    padding-right: 2.5rem;
+}
+
+.select-box {
+    text-align: left;
+    font-weight: 400;
+    color: $gray70;
+    position: relative;
+    padding-right: 2.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: $input-bg;
+        border-color: $primary;
+    }
+    &.selected {
+        color: $gray-dark;
+    }
+    &:after {
+        content: "";
+        background-image: url("../input/icons/down-arrow.svg");
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: rem(12px);
+        height: rem(12px);
+        margin: rem(-4px) rem(16px) 0 0;
+    }
+    .list {
+        padding: 0;
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    &.disabled {
+        background-color: $gray10;
+        cursor: not-allowed;
+        pointer-events: none;
+        user-select: none;
+        &:after {
+            background-image: url("../input/icons/down-arrow-gray.svg");
+        }
+    }
+}
+
+.custom-dropdown {
+    position: relative;
+    padding-bottom: 10px;
+    &.active {
+        .dropdwon-list {
+            opacity: 1;
+            visibility: visible;
+            transform: scaleX(1);
+        }
+    }
+}
+
+.dropdwon-list {
+    background-color: $white;
+    border: 1px solid $gray10;
+    border-radius: rem(8px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-top: rem(54px);
+    padding: 0;
+    max-height: 320px;
+    overflow-y: auto;
+    @include scrollbars(15px,
+    5px,
+    24px,
+    $white,
+    $white,
+    $white);
+    transition: 0.2s all linear;
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleX(0);
+    z-index: 11;
+    &:hover {
+        @include scrollbars(15px,
+        5px,
+        24px,
+        $white,
+        $gray10,
+        $gray20);
+    }
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    transition: 0.2s all linear;
+    cursor: pointer;
+    &:hover {
+        background-color: $light-primary;
+    }
+    &.disabled {
+        color: $gray70;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+.list-img {
+    width: rem(40px);
+    height: rem(40px);
+    border: 1px solid $gray10;
+    border-radius: rem(8px);
+    margin-right: 0.5rem;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        padding: rem(2px);
+    }
+}
+
+.list-text {
+    flex: 1;
+    font-size: rem(15px);
+    line-height: rem(20px);
+}
+
+.multi-line-ellipsis {
+    @include multi-line-ellipsis-2;
+    flex: 1;
+}
+
+.out-of-stock {
+    font-size: 12px;
+    line-height: 12px;
+    text-align: right;
+    color: $danger;
+}
+
+.no-pad-hover {
+    padding: 0;
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.input-group {
+    position: relative;
+    .right-icon {
+        position: absolute;
+    }
+}
+
+.input-label {
+    margin-bottom: rem(8px);
+    font-size: rem(16px);
+    line-height: rem(24px);
+    color: $gray70;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.input-wrap {
+    margin-bottom: rem(20px);
+}
+
+.my-10 {
+    margin: rem(10px) 0;
+}
+
+.out-of-stock-text {
+    color: $danger;
+    font-size: rem(12px);
+    line-height: rem(12px);
+}
+
+.list-style2 {
+    .list-img {
+        width: rem(31px);
+        height: rem(23px);
+        border: 0;
+        img {
+            padding: 0;
+        }
+    }
+    .list-text {
+        font-size: rem(16px);
+        line-height: rem(24px);
+    }
+}
+
+.no-border {
+    .form-control {
+        padding: 0;
+        height: rem(24px);
+        border-radius: 0;
+    }
+}
+
+.circle {
+    width: rem(20px);
+    height: rem(20px);
+    border-radius: 50%;
+    background-color: $primary;
+    font-size: rem(12px);
+    line-height: rem(16px);
+    font-weight: 600;
+    color: $white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: rem(6px);
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}

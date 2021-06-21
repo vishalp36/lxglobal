@@ -1,0 +1,61 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.filter-box {
+    position: relative;
+    margin-bottom: rem(10px);
+    display: inline-block;
+    vertical-align: top;
+    background: $white;
+    border: 1px solid $gray10;
+    border-radius: rem(12px);
+    padding: rem(11px) rem(10px);
+    font-weight: 600;
+    font-size: rem(15px);
+    line-height: rem(16px);
+    display: inline-block;
+    color: $gray;
+    transition: .2s all linear;
+    &.active,
+    &:hover,
+    &:focus,
+    &:active {
+        color: $primary;
+        border-color: $primary;
+    }
+}
+
+.mr-10px {
+    margin-right: rem(10px);
+}
+
+.filter-box-danger {
+    color: $danger;
+    .active,
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $danger;
+        color: $danger;
+    }
+}
+
+.image-check-box {
+    display: inline-flex;
+    white-space: nowrap;
+    align-items: center;
+    .svg-icon {
+        margin-right: 10px;
+        max-width: rem(15px);
+        width: 100%;
+        transition: .2s all linear;
+    }
+    &.img-left .svg-icon {
+        order: -1;
+    }
+}
+
+@media(min-width: $xl-device) {
+    .filter-box {
+        border-radius: rem(8px);
+    }
+}

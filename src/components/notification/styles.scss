@@ -1,0 +1,22 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.notification {
+    background-color: rgba($primary20, .4);
+    border-radius: rem(12px);
+    padding: rem(20px);
+    margin-bottom: rem(24px);
+}
+
+.notification-text {
+    text-align: center;
+    color: $primary;
+    margin-bottom: 0;
+}
+
+@media(max-width: $sm-device) {
+    .notification {
+        background-color: rgba($primary20, .4);
+        border-radius: rem(12px);
+        padding: rem(12px) rem(20px);
+    }
+}

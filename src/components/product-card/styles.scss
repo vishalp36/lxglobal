@@ -1,0 +1,266 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.product-card,
+.product-sm-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: 0.2s all linear;
+    overflow: hidden;
+}
+
+.product-card {
+    background-color: $white;
+    border: 1px solid $gray10;
+    border-radius: rem(12px);
+    &.active {
+        border-color: $primary;
+        .product-img {
+            border-color: $primary;
+            margin-top: rem(56px);
+        }
+        .badge-div {
+            margin-top: rem(62px);
+        }
+        .item-visible {
+            margin-top: 0;
+        }
+        .add-icon {
+            display: inline;
+        }
+        .cart-icon {
+            display: none;
+        }
+    }
+}
+
+.product-top {
+    position: relative;
+    padding-bottom: 100%;
+    display: block;
+}
+
+.product-img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: $white;
+    border-radius: rem(12px) rem(12px) 0 0;
+    transition: 0.2s all linear;
+    border: 1px solid $white;
+    border-bottom: 0;
+    margin: 0 -1px;
+    z-index: 1;
+    img {
+        @include img-aspect-ratio;
+    }
+}
+
+.weight,
+.store-name {
+    font-size: rem(12px);
+    line-height: rem(12px);
+}
+
+.store-name {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $gray70;
+    letter-spacing: rem(0.5px);
+    a {
+        color: inherit;
+    }
+}
+
+.product-info,
+.space-between {
+    padding: rem(12px);
+}
+
+.space-between {
+    padding-top: rem(8px);
+}
+
+.title,
+.price,
+.new-price {
+    font-weight: 600;
+    font-size: rem(18px);
+    line-height: rem(20px);
+}
+
+.title {
+    a {
+        color: inherit;
+    }
+}
+
+.price,
+.new-price {
+    word-break: break-word;
+    font-weight: 700;
+}
+
+.new-price {
+    color: $danger;
+}
+
+.with-new-price {
+    .new-price {
+        display: block;
+    }
+    .price {
+        text-decoration: line-through;
+        color: $gray70;
+        font-size: rem(14px);
+        line-height: rem(16px);
+        font-weight: 600;
+    }
+}
+
+.title {
+    @include multi-line-ellipsis-2;
+    margin-bottom: 0;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wish-item,
+.weight,
+.badge-div,
+.not-available {
+    position: absolute;
+    z-index: 1;
+}
+
+.wish-item,
+.weight {
+    bottom: 0;
+    margin-bottom: rem(8px);
+}
+
+.wish-item {
+    right: 0;
+    margin-right: rem(12px);
+}
+
+.weight {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.weight {
+    background-color: rgba($gray, 0.6);
+    border-radius: rem(6px);
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: $white;
+    padding: 0.25rem 0.369rem;
+}
+
+.badge-div {
+    top: 0;
+    right: 0;
+    margin: rem(6px) rem(6px) 0 0;
+    transition: 0.2s all linear;
+    display: inline-flex;
+    transition: 0.2s all linear;
+}
+
+.not-available {
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: rem(12px);
+    line-height: rem(12px);
+    font-weight: 700;
+    color: $danger;
+}
+
+.item-visible {
+    background-color: $primary20;
+    min-height: rem(62px);
+    width: 100%;
+    border-radius: rem(12px) rem(12px) 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: rem(8px) rem(8px) rem(15px) rem(8px);
+    margin-top: rem(-64px);
+    transition: 0.2s all linear;
+}
+
+.add-icon {
+    display: none;
+    width: rem(16px);
+    height: rem(16px);
+}
+
+.product-sm-card {
+    background-color: $white;
+    border-radius: rem(11px);
+    position: relative;
+    .title {
+        font-size: rem(14px);
+        line-height: rem(16px);
+    }
+    .price,
+    .new-price {
+        font-size: rem(16px);
+    }
+    .product-info,
+    .space-between {
+        padding: rem(5px) 0;
+    }
+}
+
+.product-with-border {
+    border: 1px solid $gray10;
+    border-radius: rem(12px);
+    .product-info,
+    .space-between {
+        padding: rem(6px);
+    }
+}
+
+.out-of-stock {
+    .product-img {
+        img {
+            opacity: .2;
+            filter: grayscale(1);
+        }
+    }
+}
+
+@media (max-width: $lg-device) {
+    .store-name {
+        font-size: rem(11px);
+        letter-spacing: rem(0.4px);
+    }
+    .title,
+    .price,
+    .new-price {
+        font-size: rem(16px);
+    }
+}
+
+.top-sub-text {
+    width: 100%;
+    text-align: center;
+}

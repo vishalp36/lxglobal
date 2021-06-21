@@ -1,0 +1,92 @@
+import React from "react";
+//buttons
+import Button from "../../button";
+
+//Input
+import Input from "../../input/text";
+
+import Pin from "../images/pin.svg";
+import Time from "../images/time.svg";
+import Document from "../images/doc.svg";
+import styles from '../styles.scss';
+
+export default function DeliveryDetails() {
+  return (
+    <>
+        <div className={`${styles['delivery-section']}`}>
+            <h3>Delivery details</h3>
+            <form>
+                <div className={`${styles['details-section']}`}>
+                    <div className={`${styles['details-row']}`}>
+                        <div className={`${styles.icon}`}>
+                            <img src={Pin} alt="Pin" />
+                        </div>
+                        <div className={`${styles.content}`}>
+                            <div className={`${styles['space-between']} ${styles['flex-start']}`}>
+                                <p className={`${styles['small-title']}`}>Delivery address</p>
+                                <Button className="btn-link p-0">Change</Button>
+                            </div>
+                            <div className={`${styles.address}`}>
+                                Maasstraat 77, 1078 LT, Amsterdam
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${styles['details-section']}`}>
+                    <div className={`${styles['details-row']}`}>
+                        <div className={`${styles.icon} ${styles['icon-18']}`}>
+                            <img src={Time} alt="Time" />
+                        </div>
+                        <div className={`${styles.content}`}>
+                            <div className={`${styles['space-between']} ${styles['flex-start']}`}>
+                                <p className={`${styles['small-title']}`}>Delivery time</p>
+                                <Button className="btn-link p-0">Change</Button>
+                            </div>
+                            <div className={`${styles['time-text']}`}>
+                                Today, 14:00 - 16:00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${styles['details-section']}`}>
+                    <div className={`${styles['details-row']}`}>
+                        <div className={`${styles.icon}`}>
+                            <img src={Document} alt="Document" />
+                        </div>
+                        <div className={`${styles.content}`}>
+                            <div className={`${styles['space-between']} ${styles['flex-start']}`}>
+                                <p className={`${styles['small-title']}`}>Delivery instructions</p>
+                                <Button className="btn-link p-0">Change</Button>
+                            </div>
+                            <div className={`${styles['inst-text']}`}>
+                                Is it a gift?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${styles['details-section']} ${styles['voucher-section']}`}>
+                    <div className={`${styles['details-row']} ${styles['flex-col']}`}>
+                        <div className={`${styles['space-between']}`}>
+                            <h4 className="mb-0">Add a voucher</h4>
+                            <div className={`${styles['btn-add']}`}>
+                                <Button className="btn-link p-0">Add</Button>
+                            </div>
+                        </div>
+                        <div className={`${styles['voucher-input']}`}>
+                            <p>If you have a Peddler voucher code, apply it to your order.</p>
+                            <div className={`${styles['input-row']}`}>
+                                <div className={`${styles['input-col']}`}>
+                                    <Input type="text" placeholdertext="Add a voucher" />
+                                </div>
+                                <div className={`${styles['full-w-in-mobile']}`}>
+                                    <Button className="btn-block">Add</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </>
+  );
+}

@@ -1,0 +1,89 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.btn-show-more {
+    text-align: center;
+    margin-top: rem(20px);
+}
+
+.store-slider {
+    padding: rem(50px) 0;
+    &:first-child {
+        padding-top: rem(10px);
+    }
+}
+
+.space-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.display-only-desktop {
+    display: none;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 rem(-16px);
+}
+
+.col {
+    max-width: 33.33%;
+    flex: 0 0 33.33%;
+    padding: rem(16px);
+}
+
+.pagination-section {
+    padding: rem(60px) 0;
+}
+
+@media(max-width: $xl-device - 1) {
+    .store-slider {
+        padding: rem(32px) 0;
+        &:first-child {
+            padding-top: rem(216px);
+        }
+    }
+    .final-cat-container {
+        padding-top: rem(64px);
+    }
+}
+
+@media(min-width: $xl-device) {
+    .hide-in-desktop {
+        display: none;
+    }
+    .display-only-desktop {
+        display: block;
+    }
+}
+
+@media(max-width: $lg-device - 1) {
+    .col {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+}
+
+@media(max-width: $sm-device) {
+    .store-slider {
+        &:first-child {
+            padding-top: rem(185px);
+        }
+    }
+    .space-between {
+        margin-bottom: rem(16px);
+    }
+    .store-title {
+        font-size: rem(18px);
+        line-height: rem(24px);
+    }
+    .final-cat-container {
+        padding-top: rem(56px);
+    }
+    .col {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+}

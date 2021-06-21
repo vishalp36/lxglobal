@@ -1,0 +1,451 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.light-gray-bg {
+    background: $gray5;
+}
+
+.banner-btn-wrap {
+    margin-top: rem(24px);
+    text-align: center;
+}
+
+.banner-text-btn {
+    white-space: nowrap;
+}
+
+.banner-text-content {
+    display: none;
+    padding-left: rem(20px);
+    color: $gray;
+    font-size: rem(15px);
+}
+
+.banner-title-txt {
+    font-size: rem(32px);
+    line-height: rem(40px);
+}
+
+@media (min-width: $md-device) {
+    .banner-btn-wrap {
+        margin-top: rem(32px);
+    }
+    .banner-title-txt {
+        font-size: rem(48px);
+        line-height: rem(56px);
+    }
+}
+
+@media (min-width: $lg-device) {
+    .banner-btn-wrap {
+        margin-top: rem(24px);
+    }
+    .banner-btn-wrap {
+        text-align: left;
+    }
+}
+
+@media (min-width: $xl-device) {
+    .banner-btn-wrap {
+        margin-top: rem(28px);
+        display: flex;
+        align-items: center;
+    }
+    .banner-text-content {
+        display: block;
+    }
+    .banner-title-txt {
+        font-size: rem(56px);
+        line-height: rem(64px);
+    }
+}
+
+// Register store card box Start
+.row {
+    display: flex;
+    margin-left: rem(-16px);
+    margin-right: rem(-16px);
+    flex-wrap: wrap;
+}
+
+.section-title {
+    margin-bottom: 0;
+}
+
+.register-store-box-section {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+}
+
+.register-store-box-col {
+    padding-top: rem(32px);
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+}
+
+@media (min-width: $md-device) {
+    .register-store-box-section {
+        padding-top: rem(80px);
+        padding-bottom: rem(80px);
+    }
+    .register-store-box-col {
+        max-width: 33.33333%;
+        flex: 0 0 33.33333%;
+    }
+}
+
+@media (min-width: $lg-device) {
+    .register-store-box-section {
+        padding-top: rem(96px);
+        padding-bottom: rem(96px);
+    }
+}
+
+@media (min-width: $xl-device) {
+    .register-store-box-section {
+        padding-top: rem(100px);
+        padding-bottom: rem(160px);
+    }
+}
+
+// Register store card box Ends
+// Benefit Start
+.benefit-row {
+    margin-bottom: rem(64px);
+}
+
+.benefit-col {
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+    width: 100%;
+    p {
+        color: $gray;
+        margin-bottom: rem(14px);
+    }
+}
+
+.register-store-btn {
+    font-weight: bold;
+    font-size: rem(16px);
+    line-height: rem(16px);
+    padding-right: rem(24px);
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 1.5px;
+        background: $primary;
+        top: 50%;
+        transform: translateY(-50%);
+        left: calc(100% - 16px);
+        transition: all 0.4s ease;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        border-top: 1.5px solid $primary;
+        border-right: 1.5px solid $primary;
+        transform: translateY(-50%) rotate(45deg);
+        transition: all 0.4s ease;
+    }
+    &:hover {
+        &:before {
+            width: rem(20px);
+        }
+        &:after {
+            right: -4px;
+        }
+    }
+}
+
+@media (min-width: $md-device) {
+    .benefit-row {
+        margin-bottom: rem(80px);
+        align-items: center;
+    }
+    .benefit-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+        p {
+            margin-bottom: rem(18px);
+        }
+    }
+}
+
+@media (min-width: $lg-device) {
+    .benefit-row {
+        margin-bottom: rem(96px);
+    }
+}
+
+@media (min-width: $xl-device) {
+    .benefit-row {
+        margin-bottom: rem(160px);
+    }
+}
+
+// Benefit End
+// Easy Integration Start
+.easy-integration-section {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+    background-color: $gray5;
+}
+
+.easy-integration-row {
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+}
+
+.easy-integration-col {
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+    width: 100%;
+    p {
+        color: $gray;
+        margin-bottom: rem(14px);
+    }
+}
+
+.easy-integration-img-wrap {
+    padding: 0 rem(20px) rem(22px);
+}
+
+.easy-integration-txt-wrap {
+    max-width: rem(400px);
+    width: 100%;
+    margin-right: auto;
+}
+
+@media (min-width: $md-device) {
+    .easy-integration-section {
+        padding-top: rem(80px);
+        padding-bottom: rem(80px);
+        border-radius: 0;
+    }
+    .easy-integration-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+        p {
+            margin-bottom: rem(18px);
+        }
+    }
+    .easy-integration-img-wrap {
+        padding: 0;
+    }
+}
+
+@media (min-width: $lg-device) {
+    .easy-integration-section {
+        padding-top: rem(84px);
+        padding-bottom: rem(84px);
+    }
+}
+
+@media (min-width: $xl-device) {
+    .easy-integration-section {
+        padding-top: rem(114px);
+        padding-bottom: rem(114px);
+    }
+}
+
+// Easy Integration End
+// Testimoniol Start
+.customer-service-section {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+}
+
+.resigster-testimoniol-sub-text {
+    max-width: rem(832px);
+    margin: 0 auto rem(44px);
+    text-align: center;
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+}
+
+@media (min-width: $md-device) {
+    .customer-service-section {
+        padding-top: rem(80px);
+        padding-bottom: rem(80px);
+    }
+    .resigster-testimoniol-sub-text {
+        margin: 0 auto rem(32px);
+    }
+}
+
+@media (min-width: $lg-device) {
+    .customer-service-section {
+        padding-top: rem(96px);
+        padding-bottom: rem(96px);
+    }
+}
+
+@media (min-width: $xl-device) {
+    .customer-service-section {
+        padding-top: rem(160px);
+        padding-bottom: rem(160px);
+    }
+    .resigster-testimoniol-sub-text {
+        margin: 0 auto rem(48px);
+    }
+}
+
+// Testimoniol End
+// Testimoniol Card Start
+.testimonial-card-wrap {
+    background: $white;
+    border: 1px solid $gray10;
+    border-radius: rem(12px);
+    padding: rem(16px);
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-text {
+    font-size: rem(18px);
+    line-height: rem(28px);
+    margin-bottom: rem(16px);
+}
+
+.testimonial-rating-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-rating {
+    margin-right: rem(12px);
+}
+
+.testimonial-user-wrap {
+    display: flex;
+    align-items: center;
+    margin-top: rem(24px);
+}
+
+.testimonial-avatar-img-wrap {
+    width: rem(40px);
+    height: rem(40px);
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: rem(12px);
+}
+
+.testimonial-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-name {
+    font-size: rem(15px);
+    line-height: rem(20px);
+    margin-bottom: 0;
+}
+
+@media (min-width: $xl-device) {
+    .testimonial-card-wrap {
+        padding: rem(24px);
+    }
+    .testimonial-text {
+        font-size: rem(20px);
+        line-height: rem(32px);
+        margin-bottom: rem(16px);
+    }
+    .testimonial-user-wrap {
+        margin-top: rem(28px);
+    }
+}
+
+// Testimoniol Card End
+// delivery-anything Start
+.delivery-anything-section {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+    background-color: $gray5;
+    border-radius: rem(187.5px) 0 0 0;
+}
+
+.delivery-anything-row {
+    align-items: center;
+    align-items: center;
+}
+
+.delivery-anything-col {
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+    width: 100%;
+    p {
+        color: $gray;
+        margin-bottom: rem(14px);
+    }
+}
+
+.delivery-anything-img-wrap {
+    padding: 0 rem(20px) rem(22px);
+}
+
+.delivery-anything-img {
+    max-width: rem(228px);
+    margin: auto;
+}
+
+.delivery-anything-txt-wrap {
+    max-width: rem(400px);
+    width: 100%;
+    margin-right: auto;
+}
+
+@media (min-width: $md-device) {
+    .delivery-anything-section {
+        padding-top: rem(80px);
+        padding-bottom: rem(80px);
+        border-radius: 0;
+    }
+    .delivery-anything-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+        p {
+            margin-bottom: rem(18px);
+        }
+    }
+    .delivery-anything-img-wrap {
+        padding: 0;
+    }
+    .delivery-anything-img {
+        max-width: rem(336px);
+    }
+}
+
+@media (min-width: $lg-device) {
+    .delivery-anything-section {
+        padding-top: rem(84px);
+        padding-bottom: rem(84px);
+    }
+    .delivery-anything-img {
+        max-width: rem(420px);
+    }
+}
+
+@media (min-width: $xl-device) {
+    .delivery-anything-section {
+        padding-top: rem(114px);
+        padding-bottom: rem(114px);
+    }
+    .delivery-anything-img {
+        max-width: rem(520px);
+    }
+}
+
+// delivery-anything End
+//Helper Classes
+.text-center {
+    text-align: center !important;
+}

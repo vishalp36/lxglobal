@@ -1,0 +1,62 @@
+{
+    "name": "luxe_global",
+    "version": "2.2.13",
+    "description": "Luxe Global",
+    "scripts": {
+        "start": "pawjs --no-cache --env=development start",
+        "build": "pawjs --no-cache --env-config-path=./.prod.env --env=production build",
+        "build:demo": "pawjs --no-cache --env-config-path=./.demo.env --env=production build",
+        "build:ghpages": "pawjs --no-cache --env-config-path=./.ghpages.env --env=production build",
+        "publish:ghpages": "npm run build:ghpages && git add dist && git commit -am 'Build GHPages' && git subtree push --prefix dist origin gh-pages",
+        "lint": "pawjs lint",
+        "test": "pawjs --no-cache test"
+    },
+    "author": {
+        "name": "Atyantik Technologies",
+        "email": "admin@atyantik.com",
+        "url": "https://www.atyantik.com/"
+    },
+    "contributors": [
+        {
+            "name": "Tirth Bodawala",
+            "email": "tirthbodawala@atyantik.com",
+            "url": "https://www.atyantik.com/"
+        },
+        {
+            "name": "Ajay Patel",
+            "email": "ajaypatel@atyantik.com",
+            "url": "https://www.atyantik.com/"
+        }
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "@lottiefiles/react-lottie-player": "^3.3.1",
+        "@pawjs/image-optimizer": "^2.2.6",
+        "@pawjs/pawjs": "^3.0.2-beta.28",
+        "@pawjs/sass": "^2.2.5",
+        "@pawjs/srcset": "^2.1.6",
+        "@types/react": "^17.0.1",
+        "@types/react-dom": "^17.0.0",
+        "bulma": "^0.9.2",
+        "cloudinary": "^1.24.0",
+        "eslint-import-resolver-webpack": "^0.13.0",
+        "fork-ts-checker-webpack-plugin": "^6.1.0",
+        "prop-types": "^15.7.2",
+        "react-phone-number-input": "^3.1.17",
+        "react-sortablejs": "^6.0.0",
+        "sortablejs": "^1.13.0",
+        "swiper": "^6.5.0",
+        "universal-fetch": "^1.0.0"
+    },
+    "devDependencies": {
+        "webpack-bundle-analyzer": "^4.4.0"
+    },
+    "browserslist": [
+        "defaults",
+        "> 5%",
+        "IE >= 11",
+        "iOS >= 7",
+        "maintained node versions",
+        "not dead"
+    ]
+}

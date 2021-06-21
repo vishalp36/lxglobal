@@ -1,0 +1,26 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+
+.login-logo-img {
+  max-width: rem(98px);
+  margin: 0 auto rem(32px);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-12 {
+  margin-top: rem(12px);
+  margin-bottom: rem(12px);
+}
+
+.forgot-link-wrap {
+  text-align: center;
+  border-bottom: 1px solid $gray20;
+  padding-bottom: rem(20px);
+  margin-bottom: rem(32px);
+  a {
+    display: inline-block;
+  }
+}

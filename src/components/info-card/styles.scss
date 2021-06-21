@@ -1,0 +1,39 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+.info-card {
+    background-color: $white;
+    border: 1px solid $gray10;
+    border-radius: rem(12px);
+    height: 100%;
+}
+
+.info-img {
+    position: relative;
+    padding-bottom: 100%;
+    border-radius: rem(12px);
+    img {
+        @include img-aspect-ratio;
+        border-radius: rem(12px);
+        object-fit: cover;
+    }
+}
+
+.info-content {
+    padding: rem(12px);
+}
+
+.info-title {
+    margin-bottom: 0;
+    font-size: rem(18px);
+    line-height: rem(24px);
+}
+
+@media(min-width: $xl-device) {
+    .info-title {
+        font-size: rem(20px);
+        line-height: rem(32px);
+    }
+    .info-content {
+        padding: rem(16px);
+    }
+}

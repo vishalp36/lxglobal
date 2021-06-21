@@ -1,0 +1,73 @@
+@import "../../resources/css/scss/variable";
+@import "../../resources/css/scss/mixins";
+// Start Home Banner
+.banner-section {
+  margin-top: -1px;
+  padding-top: 2px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  align-items: center;
+}
+
+.col-md-6 {
+  position: relative;
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.banner-text {
+  margin-top: rem(28px);
+  margin-bottom: rem(48px);
+  text-align: center;
+}
+
+.banner-image {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media (min-width: $md-device) {
+  .banner-text {
+    margin-top: rem(46px);
+    margin-bottom: rem(64px);
+  }
+}
+
+@media (min-width: $lg-device) {
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .banner-text {
+    margin-bottom: rem(72px);
+    margin-top: 0;
+    text-align: left;
+  }
+  .banner-image {
+    display: block;
+  }
+  .banner-mobile-image {
+    display: none;
+  }
+  .banner-section {
+    padding-bottom: rem(24px);
+  }
+}
+
+@media (min-width: $xl-device) {
+  .banner-text {
+    padding-left: rem(40px);
+  }
+}
+
+// End Home Banner
